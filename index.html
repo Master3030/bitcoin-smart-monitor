@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Monitor personal de Bitcoin con análisis técnico y alertas.">
+  <title>Bitcoin Smart Monitor</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">₿</div>
+      <div>
+        <h1>Bitcoin Smart Monitor</h1>
+        <p>Tu centro de análisis BTC/USDT</p>
+      </div>
+    </div>
+    <div class="connection">
+      <span class="status-dot"></span>
+      <span id="connectionStatus">Conectando...</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <span class="eyebrow">MERCADO EN TIEMPO REAL</span>
+        <h2>Bitcoin / USDT</h2>
+        <p>Seguimiento inteligente de tu mercado.</p>
+      </div>
+      <span class="btc-symbol">₿</span>
+    </section>
+
+    <section class="price-card">
+      <p class="muted">Precio actual de Bitcoin</p>
+      <h2 id="btcPrice">Cargando...</h2>
+      <p id="priceChange" class="price-change">Esperando datos del mercado</p>
+      <div class="price-details">
+        <div>
+          <span>Máximo 24 h</span>
+          <strong id="high24">--</strong>
+        </div>
+        <div>
+          <span>Mínimo 24 h</span>
+          <strong id="low24">--</strong>
+        </div>
+        <div>
+          <span>Actualización</span>
+          <strong id="lastUpdate">--</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-heading">
+        <div>
+          <h3>Resumen del mercado</h3>
+          <p>Variación del precio</p>
+        </div>
+      </div>
+      <div class="period-grid">
+        <div class="period-item">
+          <span>24 horas</span>
+          <strong id="change24">--</strong>
+        </div>
+        <div class="period-item">
+          <span>7 días</span>
+          <strong id="change7">--</strong>
+        </div>
+        <div class="period-item">
+          <span>30 días</span>
+          <strong id="change30">--</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-heading">
+        <div>
+          <h3>Análisis automático</h3>
+          <p>Señal orientativa del mercado</p>
+        </div>
+      </div>
+      <div id="marketSignal" class="signal-box">
+        <strong>ANALIZANDO</strong>
+        <p>Esperando información suficiente.</p>
+      </div>
+      <div class="indicators">
+        <div><span>RSI (14)</span><strong id="rsiValue">--</strong></div>
+        <div><span>MACD</span><strong id="macdValue">--</strong></div>
+        <div><span>Tendencia</span><strong id="trendValue">--</strong></div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-heading">
+        <div>
+          <h3>Mi estrategia</h3>
+          <p>Registra tus niveles de seguimiento</p>
+        </div>
+      </div>
+      <div class="strategy-grid">
+        <label>Zona de compra (USDT)
+          <input id="buyZone" type="number" placeholder="Ej. 60000">
+        </label>
+        <label>Objetivo de venta (USDT)
+          <input id="sellTarget" type="number" placeholder="Ej. 70000">
+        </label>
+        <label>Stop de protección (USDT)
+          <input id="stopLoss" type="number" placeholder="Ej. 58000">
+        </label>
+      </div>
+      <button id="saveStrategy" class="primary-button">Guardar estrategia</button>
+      <p id="strategyMessage" class="muted"></p>
+    </section>
+
+    <footer>
+      <p>Bitcoin Smart Monitor · Datos de mercado sujetos a disponibilidad.</p>
+      <p>Las señales son informativas y no constituyen asesoramiento financiero.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
